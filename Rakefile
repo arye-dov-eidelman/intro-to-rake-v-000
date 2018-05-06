@@ -19,7 +19,9 @@ namespace :db do
     Student.create_table
   end
 
-  task :hola do
-    puts "hola de Rake!"
+  desc 'migrate changes to your database'
+  task :seed => :environment  do
+    require_relative './db/seed'
   end
+
 end
